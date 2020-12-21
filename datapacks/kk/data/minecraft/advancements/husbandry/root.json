@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:air"
+    },
+    "title": {
+      "text": ""
+    },
+    "description": {
+      "text": ""
+    }
+  },
+  "criteria": {
+    "k": {
+      "trigger": "minecraft:impossible",
+      "conditions": {}
+    }
+  },
+  "requirements": [
+    ["k"]
+  ]
+}
