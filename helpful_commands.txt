@@ -1,0 +1,8 @@
+/tellraw @s {"nbt":"","entity":"@s","path":"SelectedItem"}
+/data get block ~ ~-1 ~
+/fill ~ ~ ~ ~ ~ ~ minecraft:command_block{Command:"say hello",auto:1}
+
+examples of JSON format for CustomName: (to be executed as the target entity)
+data modify entity @s CustomName set value "{\"text\":\"BOMB\",\"color\":\"dark_red\"}"
+data modify entity @s CustomName set value "\"§4BOMB\""
+data merge entity @s {CustomName:"{\"text\":\"Foo\",\"color\":\"green\"}"}

@@ -1,2 +1,0 @@
-/tellraw @s {"nbt":"","entity":"@s","path":"SelectedItem"}
-/fill ~ ~ ~ ~ ~ ~ minecraft:command_block{Command:"say hello",auto:1}

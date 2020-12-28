@@ -13,7 +13,6 @@ execute as @e[tag=bomb] run data merge entity @s {CustomNameVisible:1, CustomNam
 # ~								DEVELOPMENT NOTES							  ~
 # ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 #
-# JSON text formatting is a headache to work with. Here are a couple commands that work:
-#	data modify entity @s CustomName set value "{\"text\":\"BOMB\",\"color\":\"dark_red\"}"
-#	data modify entity @s CustomName set value "\"§4BOMB\""
-#	data merge entity @s {CustomName:"{\"text\":\"Foo\",\"color\":\"green\"}"}
+# JSON text formatting is a headache to work with.
+#	Working examples documented in helpful_commands.txt
+#
