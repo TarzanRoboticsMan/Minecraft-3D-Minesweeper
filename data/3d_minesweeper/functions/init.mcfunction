@@ -25,3 +25,5 @@ schedule function 3d_minesweeper:init2 2
 # Marker, in addition to lowering name, removes the hitbox and disables gravity
 #
 # disabling TrackOutput on the command blocks is meant to help with lag
+#
+# tp ~ ~-0.4 ~ is about the perfect height to make the name tags appear in the middle
