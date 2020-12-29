@@ -1,4 +1,4 @@
-# Helper function to rename an individual grid
+# Helper function to rename an individual tile
 # Called by init2
 
 tag @s add renaming
