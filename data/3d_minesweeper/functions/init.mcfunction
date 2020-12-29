@@ -7,7 +7,7 @@ gamerule commandBlockOutput false
 # Fill an 8x8 cube with command blocks, which immediately summon stands
 # The tile tag is a shorter target selector and protects non-datapack armor stands
 fill ~ ~ ~ ~9 ~9 ~9 air
-fill ~1 ~1 ~1 ~8 ~8 ~8 command_block{Command:"summon armor_stand ~ ~-0.4 ~ {Tags:[\"tile\"], Small: 1, Marker:1, Invisible:1}", auto:1, TrackOutput:0}
+fill ~1 ~1 ~1 ~8 ~8 ~8 command_block{Command:"summon armor_stand ~ ~-0.4 ~ {Tags:[\"tile\"], Marker:1, Invisible:1}", auto:1, TrackOutput:0}
 
 # The command blocks will not summon stands until the next tick,
 #	so we'll finish initializing in 2 ticks
@@ -27,5 +27,7 @@ schedule function 3d_minesweeper:init2 2
 # marker, in addition to lowering name, removes the hitbox and disables gravity
 #
 # disabling TrackOutput on the command blocks is meant to help with lag
+#
+# Small: 1 makes debugging stands nicer
 #
 # tp ~ ~-0.4 ~ is about the perfect height to make the name tags appear in the middle

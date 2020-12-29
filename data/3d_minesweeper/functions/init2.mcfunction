@@ -23,6 +23,9 @@ setblock ~ ~ ~ crimson_sign
 execute as @e[tag=tile,tag=!bomb,scores={bombCount=4..}] run function 3d_minesweeper:helper/rename
 setblock ~ ~ ~ air
 
+# we will use this later in main -> findTarget
+scoreboard objectives add distanceTraveled dummy
+
 # for debugging:
 #execute as @e[tag=tile,scores={bombCount=1..}] run data merge entity @s {CustomNameVisible:1}
 
@@ -35,3 +38,5 @@ setblock ~ ~ ~ air
 #	Working examples documented in helpful_commands.txt
 #
 # for some reason, distance=1 doesnt work as expected in all directions
+#
+# conduits obscure name tags?????
