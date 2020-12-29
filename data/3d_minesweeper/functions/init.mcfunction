@@ -22,7 +22,9 @@ schedule function 3d_minesweeper:init2 2
 #	tag which puts the name tag just above the base plate. Otherwise I'd have to
 #	offset the clouds, and the nametag's dimming effect would be based on the
 #	block underneath them
-# Marker, in addition to lowering name, removes the hitbox and disables gravity
+# in my rudimentary tests, 1024 armor stands was where I started to lag (~10^3),
+#	compared to 5096 clouds (~16^3)
+# marker, in addition to lowering name, removes the hitbox and disables gravity
 #
 # disabling TrackOutput on the command blocks is meant to help with lag
 #
