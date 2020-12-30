@@ -1,17 +1,18 @@
 # Helper function to find the block a player is looking at
 # Called by main, with @s being an armor stand with tag "flagBearer"
 
-# teleport to the next block over. Sometimes this will be the same block
-#	due to diagonals, but it will never skip over a block
-tp ^ ^ ^1
-scoreboard players add @s distanceTraveled 1
-execute if block ~ ~ ~ stone run tag @s add foundTarget
+# teleport forward a little. With larger steps we begin to miss blocks if
+#	the player was selecting a corner
+tp ^ ^ ^0.01
+scoreboard players add @s hundredthsMoved 1
+execute if block ~ ~ ~ stone run setblock ~ ~ ~ redstone_block
 
-execute at @s[tag=foundTarget] run setblock ~ ~ ~ redstone_block
-execute at @s[tag=foundTarget] run tag @s add selfDestruct
+# destroys after placing redstone or after encountering an already placed redstone
+execute unless block ~ ~ ~ air run tag @s add selfDestruct
 
-# 5 is a players reach, so if I've already tried mining at 5, self destruct
-execute if score @s distanceTraveled matches 5.. run tag @s add selfDestruct
+# 5 is a players reach, so if I've already tried mining at 5 blocks out,
+#	self destruct
+execute if score @s hundredthsMoved matches 500.. run tag @s add selfDestruct
 
 execute as @s[tag=!selfDestruct] at @s run function 3d_minesweeper:helper/flag_target
 execute as @s[tag=selfDestruct] run kill @s

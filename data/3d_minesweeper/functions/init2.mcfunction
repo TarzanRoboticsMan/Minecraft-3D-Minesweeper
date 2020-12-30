@@ -24,7 +24,7 @@ execute as @e[tag=tile,tag=!bomb,scores={bombCount=4..}] run function 3d_mineswe
 setblock ~ ~ ~ air
 
 # we will use this later in main -> findTarget
-scoreboard objectives add distanceTraveled dummy
+scoreboard objectives add hundredthsMoved dummy
 
 # for debugging:
 #execute as @e[tag=tile,scores={bombCount=1..}] run data merge entity @s {CustomNameVisible:1}
