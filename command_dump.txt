@@ -6,3 +6,4 @@ examples of JSON format for CustomName: (to be executed as the target entity)
 data modify entity @s CustomName set value "{\"text\":\"BOMB\",\"color\":\"dark_red\"}"
 data modify entity @s CustomName set value "\"§4BOMB\""
 data merge entity @s {CustomName:"{\"text\":\"Foo\",\"color\":\"green\"}"}
+data merge entity @e[tag=tile,sort=nearest,limit=1] {CustomName:"{\"text\":\"testaroo\", \"color\":\"blue\"}"}

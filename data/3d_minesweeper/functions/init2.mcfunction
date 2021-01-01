@@ -8,10 +8,12 @@ execute as @e[tag=bomb] run data merge entity @s {CustomName:"{\"text\":\"BOMB\"
 
 # setup the counts
 scoreboard objectives add bombCount dummy
+scoreboard objectives add bombsMinusFlags dummy
 # for every bomb, increment bombCount for every nearby tile
 execute as @e[tag=tile,tag=!bomb] run scoreboard players set @s bombCount 0
 # 1.8 is just over the diagonal distance to a tile at ~1 ~1 ~1
-execute as @e[tag=bomb] at @s run execute as @e[distance=..1.8,tag=tile,tag=!bomb] run scoreboard players add @s bombCount 1
+execute as @e[tag=bomb] at @s run execute as @e[distance=0.1..1.8, tag=tile, tag=!bomb] run scoreboard players add @s bombCount 1
+execute as @e[tag=tile,tag=!bomb] run scoreboard players operation @s bombsMinusFlags = @s bombCount
 
 # hard coding colors and numbers
 execute as @e[scores={bombCount=1}] run data merge entity @s {CustomName:"{\"text\":\"1\",\"color\":\"#2222FF\"}"}
@@ -40,3 +42,6 @@ scoreboard objectives add hundredthsMoved dummy
 # for some reason, distance=1 doesnt work as expected in all directions
 #
 # conduits obscure name tags?????
+#
+# bombsMinusFlags is probably unnecessary - I can change bombCount after I setup
+#	the names. I'm adding it, however, because it seems like a best practice

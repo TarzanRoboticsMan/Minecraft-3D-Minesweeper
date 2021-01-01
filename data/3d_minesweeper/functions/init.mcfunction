@@ -3,6 +3,7 @@
 # Kill old stands
 kill @e[tag=tile]
 gamerule commandBlockOutput false
+stopsound
 
 # Fill an 8x8 cube with command blocks, which immediately summon stands
 # The tile tag is a shorter target selector and protects non-datapack armor stands
