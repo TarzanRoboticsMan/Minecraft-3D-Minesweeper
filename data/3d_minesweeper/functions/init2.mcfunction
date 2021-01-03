@@ -30,6 +30,8 @@ setblock ~ ~ ~ air
 
 # we will use this later in main -> findTarget
 scoreboard objectives add hundredthsMoved dummy
+# we will use this later for flagging bombs
+scoreboard objectives add flags minecraft.used:minecraft.redstone_torch
 
 # for debugging:
 #execute as @e[tag=tile,scores={bombCount=1..}] run data merge entity @s {CustomNameVisible:1}
