@@ -5,16 +5,17 @@
 #	the player was selecting a corner
 tp ^ ^ ^0.01
 scoreboard players add @s hundredthsMoved 1
+
+execute if block ~ ~ ~ redstone_torch run setblock ~ ~ ~ air
+execute if block ~ ~ ~ redstone_wall_torch run setblock ~ ~ ~ air
+
+# sets to selfDestruct right before running helper/flagged
+execute unless block ~ ~ ~ air run tag @s add selfDestruct
 # this -0.4 matches the -0.4 all stands are lowered by in init - now we can use
 #	sort=nearest to find the armor stand representing our tile
 # the 0.9 is half of the typical 1.8 - basically, within half a block accounting
 #	for diagonals. Otherwise flagging stone under the board flags nearby tiles
-execute if block ~ ~ ~ stone positioned ~ ~-0.4 ~ as @e[tag=tile,sort=nearest,limit=1,distance=..0.9] at @s run function 3d_minesweeper:helper/flagged
-
-# destroys after placing redstone or after encountering an already placed redstone
-execute if block ~ ~ ~ redstone_torch run setblock ~ ~ ~ air
-execute if block ~ ~ ~ redstone_wall_torch run setblock ~ ~ ~ air
-execute unless block ~ ~ ~ air run tag @s add selfDestruct
+execute unless block ~ ~ ~ air positioned ~ ~-0.4 ~ as @e[tag=tile,sort=nearest,limit=1,distance=..0.9] at @s run function 3d_minesweeper:helper/flagged
 
 # 5 is a players reach, so if I've already tried mining at 5 blocks out,
 #	self destruct
