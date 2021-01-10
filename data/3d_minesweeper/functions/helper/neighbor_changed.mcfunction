@@ -1,14 +1,13 @@
 # Helper function for tile being mined to update neighbors (for count hiding)
-# Called by helper/mined on neighbors with noMoreBombsButCountVisible
+# Called by helper/mined on neighbors with bombsCount >= 1
 
 tag @s add processing
 
-# If theres no nearby stone, the count no longer provides useful information
-execute as @e[distance=0.1..1.8,tag=tile,tag=!mined] at @s if block ~ ~ ~ stone as @e[tag=processing,limit=1] run tag @s add cancel
+execute if score @s bombsMinusFlags matches 0 run data merge entity @s {CustomNameVisible:0}
+
+# If theres nearby stone, the count still provides useful info
+execute as @e[distance=0.1..1.8,tag=tile,tag=!mined] at @s if block ~ ~ ~ stone as @e[tag=processing,limit=1] run data merge entity @s {CustomNameVisible:1}
 #debugging: execute as @e[distance=0.1..1.8,tag=tile,tag=!mined] at @s if block ~ ~ ~ stone run say im stone
 
-execute as @s[tag=!cancel] run data merge entity @s {CustomNameVisible:0}
-#debugging: execute as @s[tag=cancel] run say canceled :(
-execute as @s[tag=cancel] run tag @s remove cancel
 
 tag @s remove processing
