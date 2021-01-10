@@ -9,4 +9,8 @@ data merge entity @s {CustomName:"{\"text\":\"Foo\",\"color\":\"green\"}"}
 data merge entity @e[tag=tile,sort=nearest,limit=1] {CustomName:"{\"text\":\"testaroo\", \"color\":\"blue\"}"}
 clone 74 60 -39 74 60 -39 ~ ~-30 ~
 execute as @e[tag=tile,tag=mined,nbt={CustomNameVisible:1b}] at @s run clone 74 60 -39 74 60 -39 ~ ~-30 ~
-give @s redstone_torch{display:{Name:'[{"text":"Flag / Unflag","italic":false}]',Lore:['[{"text":"Use on tiles to mark or","italic":false}]','[{"text":"unmark them as bombs","italic":false}]']}} 1
+give @s redstone_torch{display:{Name:'[{"text":"Flag / Unflag","italic":false,"color":"#FF8822"}]',Lore:['[{"text":"Use on tiles to mark or","italic":false}]','[{"text":"unmark them as bombs","italic":false}]']}} 1
+give @p written_book{pages:['{"text":"Minecraft Tools book"}'],title:Instructions,author:"Coby Sontag",generation:1,display:{Lore:["Big man big plan"]}}
+/give @s redstone_torch{display:{Name:'[{"text":"Flag / Unflag","italic":false}]',Lore:['[{"text":"Use on tiles to mark","italic":false}]','[{"text":"or unmark bombs","italic":false}]']}} 1
+
+adapted: give @p written_book{pages:['{"text":"Minecraft Tools book"}'],title:Instructions,author:"Coby Sontag"} #,display:{Lore:['[{"text":"by Coby Sontag","italic":false}]']}
