@@ -1,5 +1,5 @@
 # Helper function for tile being mined to update neighbors (for count hiding)
-# Called by helper/mined on neighbors with bombsCount >= 1
+# Called by helper/mined on mined neighbors with bombsCount >= 1
 
 tag @s add processing
 
