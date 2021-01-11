@@ -1,4 +1,13 @@
 # Initialize the board
+# Called by main when user presses [Yes] button from initalization/pressed_start
+#	Called as user but at 3dmsController
+
+scoreboard players set @s spawnboard 0
+scoreboard players enable @a spawnboard
+tellraw @a [{"text":"\n"},{"text":"Loading new board! "}, {"text":"[New Board]","color":"#FFAA00", "hoverEvent":{"action":"show_text","value":"Spawn new board"},"clickEvent":{"action":"run_command","value":"/trigger spawnboard"}}]
+
+kill @e[tag=3dmsHelper]
+execute as @e[tag=3dmsController] at @s if block ~ ~-1 ~ structure_block run clone ~ ~-2 ~ ~ ~-2 ~ ~ ~-1 ~
 
 # Kill old stands
 kill @e[tag=tile]
@@ -7,12 +16,12 @@ stopsound @a master
 
 # Fill an 8x8 cube with command blocks, which immediately summon stands
 # The tile tag is a shorter target selector and protects non-datapack armor stands
-fill ~ ~ ~ ~9 ~9 ~9 air
-fill ~1 ~1 ~1 ~8 ~8 ~8 command_block{Command:"summon armor_stand ~ ~-0.4 ~ {Tags:[\"tile\"], Marker:1, Invisible:1}", auto:1, TrackOutput:0}
+execute at @e[tag=3dmsController] run fill ~ ~ ~ ~9 ~9 ~9 air
+execute at @e[tag=3dmsController] run fill ~1 ~1 ~1 ~8 ~8 ~8 command_block{Command:"summon armor_stand ~ ~-0.4 ~ {Tags:[\"tile\"], Marker:1, Invisible:1}", auto:1, TrackOutput:0}
 
 # The command blocks will not summon stands until the next tick,
 #	so we'll finish initializing in 2 ticks
-schedule function 3d_minesweeper:init2 2
+execute at @e[tag=3dmsController] run schedule function 3d_minesweeper:initialization/init2 2
 
 
 # ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~

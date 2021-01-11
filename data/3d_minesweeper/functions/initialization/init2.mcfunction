@@ -1,5 +1,5 @@
 # Continue to initialize the board
-# Called by init
+# Called by initalization/init
 
 # delete command blocks, fill area with stone and bombs
 execute as @e[tag=tile] at @s run setblock ~ ~ ~ stone

@@ -11,3 +11,7 @@ execute as @a[scores={flags=1..}] run scoreboard players set @s flags 0
 execute as @e[tag=flagBearer] at @s run teleport @s ~ ~ ~ facing entity @p eyes
 execute as @e[tag=flagBearer] at @s run teleport ^ ^ ^0.01
 execute as @e[tag=flagBearer] at @s run function 3d_minesweeper:helper/flag_target
+
+# check if our users have pressed any buttons
+execute as @a[scores={start=1}] at @s run function 3d_minesweeper:initialization/pressed_start
+execute as @a[scores={spawnboard=1}] at @e[tag=3dmsController] run function 3d_minesweeper:initialization/init
