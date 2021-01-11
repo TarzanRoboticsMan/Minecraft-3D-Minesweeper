@@ -3,8 +3,7 @@
 
 # clean up from previous commands
 kill @e[tag=3dmsHelper]
-kill @e[tag=3dmsController]
-summon armor_stand ~ ~ ~ {Tags:["3dmsController"], Marker:1, Invisible:1}
+execute unless entity @e[tag=3dmsController] run summon armor_stand ~ ~256 ~ {Tags:["3dmsController"], Marker:1, Invisible:1}
 
 scoreboard objectives add start trigger
 scoreboard players reset @a start
