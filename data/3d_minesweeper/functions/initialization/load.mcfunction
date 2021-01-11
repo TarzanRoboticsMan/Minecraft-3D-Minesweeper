@@ -23,7 +23,6 @@ tellraw @a [{"text":"   - Use your "},{"text":"Redstone Torch ", "color":"#FF882
 
 tellraw @a [{"text":"   - If you need this message again, just type "},{"text":"/reload", "hoverEvent":{"action":"show_text","value":"click to reload"},"clickEvent":{"action":"run_command","value":"/reload"},"color":"#33FFDD"}]
 tellraw @a ""
-#tell them to say reload to resummon the commands (WITH INSERTION)
 
 #tellraw @a "Blocks display the number of nearby mines"
 #tellraw @a "Try to flag all the bombs and mine out everything else"

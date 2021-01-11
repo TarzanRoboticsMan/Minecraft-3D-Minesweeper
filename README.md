@@ -8,7 +8,7 @@ Tile counts hide when all adjacent bombs are flagged and adjacent empty tiles ar
 
 Todo:
 -Real bombclicked animation using explosion emmitter, false flags change
--Nice load and reload interface
+-Win animation!
 -Make destroying flags not destroy; "cant destroy flags"; turn into question? (add that to instructions)
 -Question block for all torches?
 -outline mode
