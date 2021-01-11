@@ -16,6 +16,8 @@ scoreboard players reset @a spawnboard
 scoreboard objectives add mistakes trigger
 scoreboard players reset @a mistakes
 
+execute as @a[nbt=!{Inventory:[{id:"minecraft:redstone_torch", tag:{display:{Name:"[{\"text\":\"Flag / Unflag\",\"italic\":false,\"color\":\"#FF8822\"}]"}}}]}] run give @s redstone_torch{display:{Name:"[{\"text\":\"Flag / Unflag\",\"italic\":false,\"color\":\"#FF8822\"}]",Lore:["[{\"text\":\"Use on tiles to mark or\",\"italic\":false}]","[{\"text\":\"unmark them as bombs\",\"italic\":false}]"]}} 1
+
 # empty string needed or else hover/click actions apply to whole line
 #	(only happens when hover/click is the first text in the list)
 tellraw @a [{"text":""},{"text":"<cobyrocks> ","color":"#FF3333","hoverEvent":{"action":"show_text","value":"Click me!"},"clickEvent":{"action":"open_url","value":"https://cobysontag.com"}},{"text":"Hey! Welcome to 3D Minesweeper :)","color":"white"}]
