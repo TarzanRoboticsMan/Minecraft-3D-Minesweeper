@@ -10,7 +10,7 @@ execute as @s[tag=flagged, tag=!bomb] run data merge entity @s {CustomNameVisibl
 
 execute as @s[tag=bomb, tag=!flagged, tag=!animator] at @s run setblock ~ ~ ~ light_gray_stained_glass
 execute as @s[tag=bomb, tag=!flagged] run playsound minecraft:entity.generic.explode block @a ~ ~ ~ 0.5
-execute as @s[tag=bomb, tag=!flagged] run particle explosion_emitter
+execute as @s[tag=bomb, tag=!flagged] run particle explosion
 execute as @s[tag=bomb, tag=!flagged] run data merge entity @s {CustomNameVisible:1}
 
 execute if score @s bombCount matches 0 run setblock ~ ~ ~ air

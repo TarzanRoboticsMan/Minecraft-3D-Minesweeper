@@ -4,14 +4,27 @@ Inspired and informed by from [TheAl_T's creation](https://www.planetminecraft.c
 
 Most of the code is in [/data/3d_minesweeper/functions](/data/3d_minesweeper/functions)
 
-Tile counts hide when all adjacent bombs are flagged and adjacent empty tiles are mined. This is to un-crowd the interface, but it does provide an advantage if abused
+Tile counts hide when all adjacent bombs are flagged and adjacent empty tiles are mined. This is to un-crowd the interface, but it does provide an advantage
 
-Todo:
--bombclicked animation maybe goes slower, even "popcorns"?
--Win animation!
--Make destroying flags not destroy; "cant destroy flags"; turn into question? (add that to instructions)
--Question block for all torches?
--outline mode
--For many questions and also for flagging, change air / redstone checks to tag checks
--Use entity for scoreboard to all names aren't repeated
--Survival style game? Dynamic loading and bombs can kill you but dont cause loss condition
+### Todo:
+- Make bomb clicked animation go slower
+  - "popcorn" style, use random values so it happens slowly over a few seconds
+- Win animation!
+- Make destroying flags give warning instead of destroying
+  - Maybe they should turn into a question flag, which can be broken
+  - Allow user to say "dont show this warning again"
+- "Question flag"
+  - Maybe torches and soul torches can each have unique flags
+- Outline mode to help players see grid
+- Change air / redstone checks (mostly when flagging target) to tag checks
+  - Cleaner code
+  - Could help with question mark feature
+- Use a dummy entity for the bomb scoreboard so it doesn't show a value for every online player
+
+### Larger Feature Ideas
+- Survival style game
+  - Dynamic loading of tiles (8x8x8 is already approaching laggy)
+  - Mining bombs causes explosions which can chain and might kill you
+  - Get resources for mining / flagging bomb dense areas
+
+### Forsaken Feature Ideas
