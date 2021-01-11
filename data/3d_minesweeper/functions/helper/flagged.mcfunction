@@ -4,7 +4,9 @@
 scoreboard players set @a flagging 1
 execute if block ~ ~ ~ redstone_block run scoreboard players set @a flagging -1
 execute if score @p flagging matches 1 run setblock ~ ~ ~ redstone_block
+execute if score @p flagging matches 1 run tag @s add flagged
 execute if score @p flagging matches -1 run setblock ~ ~ ~ stone
+execute if score @p flagging matches -1 run tag @s remove flagged
 
 scoreboard players operation @a Bombs -= @p flagging
 

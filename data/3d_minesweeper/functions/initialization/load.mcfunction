@@ -13,9 +13,13 @@ scoreboard players enable @a start
 scoreboard objectives add spawnboard trigger
 scoreboard players reset @a spawnboard
 
+scoreboard objectives add mistakes trigger
+scoreboard players reset @a mistakes
+
 # empty string needed or else hover/click actions apply to whole line
 #	(only happens when hover/click is the first text in the list)
-tellraw @a [{"text":""},{"text":"<cobyrocks> ","color":"#FF3333","hoverEvent":{"action":"show_text","value":"Click me!"},"clickEvent":{"action":"open_url","value":"https://cobysontag.com"}},{"text":"Hey! Welcome to 3D Minesweeper :)","color":"white"},{"text":"\n"}]
+tellraw @a [{"text":""},{"text":"<cobyrocks> ","color":"#FF3333","hoverEvent":{"action":"show_text","value":"Click me!"},"clickEvent":{"action":"open_url","value":"https://cobysontag.com"}},{"text":"Hey! Welcome to 3D Minesweeper :)","color":"white"}]
+tellraw @a ""
 
 tellraw @a [{"text":"   - To spawn a board, click the "}, {"text":"[Start]", "color":"#44FF44","hoverEvent":{"action":"show_text","value":"Click to start"},"clickEvent":{"action":"run_command","value":"/trigger start"}},{"text":" button","color":"white"}]
 

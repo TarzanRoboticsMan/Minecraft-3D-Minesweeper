@@ -4,6 +4,9 @@
 # if a player mines a block, or helper/mined does, process that tile
 execute as @e[tag=tile,tag=!mined] at @s if block ~ ~ ~ air run function 3d_minesweeper:helper/mined
 
+# ripplig process like mined for ending animation
+execute as @e[tag=losing,tag=!lost] at @s run function 3d_minesweeper:end/lose_animation
+
 # if just used the flag object, start flagging process
 execute as @a[scores={flags=1..}] at @s anchored eyes run summon armor_stand ^ ^ ^-0.01 {Tags:["flagBearer"], Invisible:1, Marker:1}
 execute as @a[scores={flags=1..}] run scoreboard players set @s flags 0
@@ -15,3 +18,4 @@ execute as @e[tag=flagBearer] at @s run function 3d_minesweeper:helper/flag_targ
 # check if our users have pressed any buttons
 execute as @a[scores={start=1}] at @s run function 3d_minesweeper:initialization/pressed_start
 execute as @a[scores={spawnboard=1}] at @e[tag=3dmsController] run function 3d_minesweeper:initialization/init
+execute as @a[scores={mistakes=1}] run schedule function 3d_minesweeper:end/prime_lose_animation 1

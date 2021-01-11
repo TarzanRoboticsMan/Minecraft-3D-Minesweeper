@@ -7,7 +7,7 @@ Most of the code is in [/data/3d_minesweeper/functions](/data/3d_minesweeper/fun
 Tile counts hide when all adjacent bombs are flagged and adjacent empty tiles are mined. This is to un-crowd the interface, but it does provide an advantage if abused
 
 Todo:
--Real bombclicked animation using explosion emmitter, false flags change
+-bombclicked animation maybe goes slower, even "popcorns"?
 -Win animation!
 -Make destroying flags not destroy; "cant destroy flags"; turn into question? (add that to instructions)
 -Question block for all torches?

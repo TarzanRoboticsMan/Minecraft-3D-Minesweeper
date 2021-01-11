@@ -17,4 +17,4 @@ execute as @s[tag=!bomb] as @e[distance=..1.8,scores={bombsMinusFlags=0, bombCou
 # kill tiles with nothing to display, cut down on lag
 execute if score @s bombCount matches 0 run kill @s
 
-execute at @s[tag=bomb] run function 3d_minesweeper:bomb_clicked
+execute at @s[tag=bomb] run function 3d_minesweeper:end/bomb_clicked

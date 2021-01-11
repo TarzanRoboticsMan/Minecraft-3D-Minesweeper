@@ -4,7 +4,8 @@
 
 scoreboard players set @s spawnboard 0
 scoreboard players enable @a spawnboard
-tellraw @a [{"text":"Loading new board! "}, {"text":"[New Board]","color":"#FFAA00", "hoverEvent":{"action":"show_text","value":"Spawn new board"},"clickEvent":{"action":"run_command","value":"/trigger spawnboard"}},{"text":"\n"}]
+tellraw @a [{"text":"Loading new board! "}, {"text":"[New Board]","color":"#FFAA00", "hoverEvent":{"action":"show_text","value":"Spawn new board"},"clickEvent":{"action":"run_command","value":"/trigger spawnboard"}}]
+tellraw @a ""
 
 kill @e[tag=3dmsHelper]
 execute as @e[tag=3dmsController] at @s if block ~ ~-1 ~ structure_block run clone ~ ~-2 ~ ~ ~-2 ~ ~ ~-1 ~
@@ -13,11 +14,14 @@ execute as @e[tag=3dmsController] at @s if block ~ ~-1 ~ structure_block run clo
 kill @e[tag=tile]
 gamerule commandBlockOutput false
 stopsound @a master
+schedule clear
 
 # Fill an 8x8 cube with command blocks, which immediately summon stands
 # The tile tag is a shorter target selector and protects non-datapack armor stands
 execute at @e[tag=3dmsController] run fill ~ ~ ~ ~9 ~9 ~9 air
-execute at @e[tag=3dmsController] run fill ~1 ~1 ~1 ~8 ~8 ~8 command_block{Command:"summon armor_stand ~ ~-0.4 ~ {Tags:[\"tile\"], Marker:1, Invisible:1}", auto:1, TrackOutput:0}
+execute at @e[tag=3dmsController] run fill ~1 ~1 ~1 ~8 ~8 ~8 command_block{Command:"summon armor_stand ~ ~-0.4 ~ {Tags:[\"tile\"], Marker:1, Invisible:1, CustomName:\"{\\\"text\\\":\\\"\\\"}\"}", auto:1, TrackOutput:0}
+# thanks to https://gaming.stackexchange.com/a/254573 for helping me realize
+#	how to do that horrid "\\\\\\\"
 
 # The command blocks will not summon stands until the next tick,
 #	so we'll finish initializing in 2 ticks
