@@ -10,7 +10,7 @@ scoreboard players reset @a start
 scoreboard players enable @a start
 
 scoreboard objectives add spawnboard trigger
-scoreboard players reset @a spawnboard
+scoreboard players set @a spawnboard 0
 
 scoreboard objectives add mistakes trigger
 scoreboard players reset @a mistakes

@@ -6,7 +6,7 @@ tag @s add processing
 execute if score @s bombsMinusFlags matches 0 run data merge entity @s {CustomNameVisible:0}
 
 # If theres nearby stone, the count still provides useful info
-execute as @e[distance=0.1..1.8,tag=tile,tag=!mined] at @s if block ~ ~ ~ stone as @e[tag=processing,limit=1] run data merge entity @s {CustomNameVisible:1}
+execute as @e[distance=0.1..1.8,tag=tile,tag=!mined] at @s if block ~ ~ ~ stone as @e[tag=processing,limit=1] at @s unless block ~ ~ ~ stone run data merge entity @s {CustomNameVisible:1}
 #debugging: execute as @e[distance=0.1..1.8,tag=tile,tag=!mined] at @s if block ~ ~ ~ stone run say im stone
 
 
