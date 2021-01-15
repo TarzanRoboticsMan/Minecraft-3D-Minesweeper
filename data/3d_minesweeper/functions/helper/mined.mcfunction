@@ -3,6 +3,8 @@
 
 tag @s add mined
 
+tag @e[tag=3dmsController] add playing
+
 # setblock air without tagging the tile as mined causes main to run
 #	mined.mcfunction in the next tick, creating a ripple out effect
 execute if score @s bombCount matches 0 as @e[distance=0.1..1.8, tag=tile, tag=!mined] at @s run setblock ~ ~ ~ air

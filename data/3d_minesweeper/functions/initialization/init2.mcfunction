@@ -5,9 +5,16 @@
 execute as @e[tag=tile] at @s run setblock ~ ~ ~ stone
 execute as @e[tag=tile,sort=random,limit=50] run tag @s add bomb
 execute as @e[tag=bomb] run data merge entity @s {CustomName:"{\"text\":\"BOMB\", \"color\":\"dark_red\"}"}
-scoreboard objectives add Bombs dummy
-scoreboard players set @a Bombs 50
-scoreboard objectives setdisplay sidebar Bombs
+
+scoreboard objectives remove 3dms
+scoreboard objectives add 3dms dummy {"text":" Minesweeper ", "color":"red"}
+scoreboard players set Bombs 3dms 50
+scoreboard objectives setdisplay sidebar 3dms
+
+scoreboard objectives add ticks dummy
+scoreboard players set Time 3dms 0
+
+tag @e[tag=3dmsController] remove playing
 
 # setup the counts
 scoreboard objectives add bombCount dummy

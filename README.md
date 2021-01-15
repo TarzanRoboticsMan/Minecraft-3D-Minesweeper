@@ -1,5 +1,5 @@
 # Minecraft-3D-Minesweeper
-Datapack folder for 3D Minesweeper in Minecraft
+Datapack folder for 3 dimensional Minesweeper in Minecraft
 Inspired and informed by from [TheAl_T's creation](https://www.planetminecraft.com/project/3d-minesweeper-in-minecraft-3298593/)
 
 Most of the code is in [/data/3d_minesweeper/functions](/data/3d_minesweeper/functions)
@@ -19,7 +19,6 @@ Tile counts hide when all adjacent bombs are flagged and adjacent empty tiles ar
 - Change air / redstone checks (mostly when flagging target) to tag checks
   - Cleaner code
   - Could help with question mark feature
-- Use a dummy entity for the bomb scoreboard so it doesn't show a value for every online player
 - Add delay to count hiding to make it less of an advantage
 - Difficulties
 
