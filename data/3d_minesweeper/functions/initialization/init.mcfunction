@@ -4,8 +4,7 @@
 
 scoreboard players set @s spawnboard 0
 scoreboard players enable @a spawnboard
-tellraw @a [{"text":"Loading new board! "}, {"text":"[New Board]","color":"#FFAA00", "hoverEvent":{"action":"show_text","value":"Spawn new board"},"clickEvent":{"action":"run_command","value":"/trigger spawnboard"}}]
-tellraw @a ""
+tellraw @a [{"text":"> ","color":"#FF3333"},{"text":"Loading new board! ","color":"white"}, {"text":"[New Board]","color":"#FFAA00", "hoverEvent":{"action":"show_text","value":"Spawn new board"},"clickEvent":{"action":"run_command","value":"/trigger spawnboard"}}]
 
 kill @e[tag=3dmsHelper]
 execute as @e[tag=3dmsController] at @s if block ~ ~-1 ~ structure_block run clone ~ ~-2 ~ ~ ~-2 ~ ~ ~-1 ~

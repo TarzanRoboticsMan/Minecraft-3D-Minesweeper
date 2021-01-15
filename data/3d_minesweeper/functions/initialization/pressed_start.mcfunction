@@ -18,5 +18,5 @@ execute align xyz run summon minecraft:area_effect_cloud ~5 ~10 ~5 {Radius:5,Dur
 execute align xyz run summon minecraft:area_effect_cloud ~5 ~ ~5 {Radius:5,Duration:1200,Particle:"mycelium",Tags:["3dmsHelper"]}
 execute align xyz run particle mycelium ~5 ~5 ~5 2 2 2 1 10000 force
 
-tellraw @s [{"text":"Spawn board in the highlighted area? "},{"text":"[Yes]","color":"green","hoverEvent":{"action":"show_text","value":"Spawn board"},"clickEvent":{"action":"run_command","value":"/trigger spawnboard"}},{"text":" "},{"text":"[No, try here]","color":"red","hoverEvent":{"action":"show_text","value":"Click to restart"},"clickEvent":{"action":"run_command","value":"/trigger start"}}]
-tellraw @s ""
+tellraw @s [{"text":"> ","color":"#FF3333"},{"text":"Spawn board in the highlighted area? ", "color":"white"}, {"text":"[Yes]","color":"green", "hoverEvent":{"action":"show_text","value":"Spawn board"}, "clickEvent":{"action":"run_command","value":"/trigger spawnboard"}},{"text":" "},{"text":"[No, try here]","color":"red","hoverEvent":{"action":"show_text","value":"Click to restart"},"clickEvent":{"action":"run_command","value":"/trigger start"}}]
+#tellraw @s ""
